@@ -1,5 +1,4 @@
 const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
@@ -11,17 +10,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.png$|\.jpg$|\.gif$|\.jpeg$/i,
+        test: /\.(png|jpg|gif|jpeg)$/i,
         exclude: /node_modules/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 10240
-          }
-        }]
+        type: 'asset'
       },
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: [
           'cache-loader',
@@ -33,8 +27,6 @@ module.exports = {
         test: /\.vue$/,
         exclude: /node_modules/,
         use: [
-          'cache-loader',
-          'thread-loader',
           'vue-loader'
         ]
       },
@@ -56,7 +48,6 @@ module.exports = {
   },
   plugins:[
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: NODE_ENV === 'development' ? 'Carl的Vue3脚手架-开发模式' : 'Carl的Vue3脚手架-生产模式',
       template: path.join(__dirname,'..','public','index.html')
@@ -69,6 +60,7 @@ module.exports = {
     //extensions: ['*','jpg','png','gif','jpeg']
   },
   output: {
+    clean: true,
     path: path.join(__dirname,'..','dist'),
     filename: NODE_ENV === 'development' ? '[name].[hash].js' : '[name].[chunkhash].js'
   }
