@@ -1,7 +1,7 @@
 {
   "name": "yy-vue3-custom-scaffold",
   "version": "1.0.0",
-  "description": "基于vue3搭建的脚手架",
+  "description": "基于Webpack5搭建的Vue3脚手架",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve --config ./build/webpack.dev.config.js --open",
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.config.js",
