@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
@@ -36,6 +37,7 @@ module.exports = {
         use: [
           NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
+          'postcss-loader',
           {
             loader: 'sass-loader',
             options: {
@@ -47,6 +49,7 @@ module.exports = {
     ]
   },
   plugins:[
+    new webpack.ProgressPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       title: NODE_ENV === 'development' ? 'Carl的Vue3脚手架-开发模式' : 'Carl的Vue3脚手架-生产模式',
@@ -58,6 +61,9 @@ module.exports = {
       "@src": path.join(__dirname,'..','src')
     }
     //extensions: ['*','jpg','png','gif','jpeg']
+  },
+  optimization: {
+    runtimeChunk: 'single'
   },
   output: {
     clean: true,
