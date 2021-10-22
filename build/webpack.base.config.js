@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 const NODE_ENV = process.env.NODE_ENV
 
@@ -49,6 +50,9 @@ module.exports = {
     ]
   },
   plugins:[
+    new ESLintPlugin({
+      extensions: ['js','vue']
+    }),
     new webpack.ProgressPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
