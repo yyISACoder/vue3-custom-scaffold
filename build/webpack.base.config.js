@@ -63,8 +63,8 @@ module.exports = {
   resolve: {
     alias: {
       "@src": path.join(__dirname,'..','src')
-    }
-    //extensions: ['*','jpg','png','gif','jpeg']
+    },
+    extensions: ['.js','.json','.vue','...'] // ...代表webpack默认的扩展名
   },
   optimization: {
     runtimeChunk: 'single'

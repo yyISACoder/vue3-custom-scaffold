@@ -4,5 +4,5 @@ module.exports = {
 	"trailingComma": "none",
 	"singleQuote": true,
 	"tabWidth": 2,
-	//"endOfLine": "auto"
+	"endOfLine": "auto" // 解决␍⏎ 平台差异问题
 }
