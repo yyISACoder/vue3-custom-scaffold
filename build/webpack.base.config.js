@@ -62,7 +62,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      "@src": path.join(__dirname,'..','src')
+      "@src":path.join(__dirname,'..','src')
     }
     //extensions: ['*','jpg','png','gif','jpeg']
   },
