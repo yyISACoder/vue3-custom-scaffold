@@ -9,7 +9,8 @@
     "eslint:init": "eslint --init",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "commitlint": "commitlint -e"
+    "commitlint": "commitlint -e",
+    "eslint:fix": "eslint --ext .js,.vue --fix src"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "mini-css-extract-plugin": "1.6.2",
     "postcss": "^8.3.8",
     "postcss-loader": "^6.1.1",
+    "prettier": "^2.4.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
     "thread-loader": "^3.0.4",
