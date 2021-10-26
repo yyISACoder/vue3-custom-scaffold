@@ -7,9 +7,9 @@
 4. 支持js新版本语法
 5. 支持对打包构建产物的分析
 6. 支持css3新语法
-7. 集成lint-staged、husky、commitlint、eslint、prettier工具链，用于规范代码风格与提高代码质量
-8. 集成vue-router4
-9. 集成vuex4
+7. 集成 **vue-router4**
+8. 集成 **vuex4**
+9. 集成lint-staged、husky、commitlint、eslint、prettier工具链，用于规范代码风格与提高代码质量
 
 ## 使用
 1. yarn
