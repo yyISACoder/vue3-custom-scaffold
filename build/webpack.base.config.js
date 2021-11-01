@@ -62,7 +62,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      "@src": path.join(__dirname,'..','src')
+      "@": path.join(__dirname,'..','src')
     },
     extensions: ['.js','.json','.vue','...'] // ...代表webpack默认的扩展名
   },
